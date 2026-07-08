@@ -61,9 +61,9 @@ const SOLUTION_ITEMS = [
 
 /* ── Resource items ────────────────────────────────── */
 const RESOURCE_ITEMS = [
-  { label: 'Blog', to: '/resources/blog', icon: BookOpen },
-  { label: 'Guides & Templates', to: '/resources/guides', icon: FileText },
-  { label: 'Help Center / FAQ', to: '/resources/help', icon: HelpCircle },
+  { label: 'Blog', to: '/resources/blog', icon: BookOpen, desc: 'Operational articles, case studies & tips' },
+  { label: 'Guides & Templates', to: '/resources/guides', icon: FileText, desc: 'Excel calculations & checklist printouts' },
+  { label: 'Help Center / FAQ', to: '/resources/help', icon: HelpCircle, desc: 'Printer & POS setup manuals & support lines' },
 ];
 
 const NAV_ITEMS = [
@@ -177,30 +177,60 @@ export default function Header() {
                     </div>
                   )}
 
-                  {/* ── Solutions & Resources dropdown ── */}
-                  {item.label !== 'Product' && (
+                  {/* ── Solutions dropdown (simple) ── */}
+                  {item.label === 'Solutions' && (
                     <div
                       className={`absolute top-full left-0 mt-2 bg-white border border-gray-100 rounded-xl shadow-xl py-2 transition-all duration-150 ${
-                        openDropdown === item.label
+                        openDropdown === 'Solutions'
                           ? 'opacity-100 visible translate-y-0'
                           : 'opacity-0 invisible -translate-y-2'
                       }`}
                       style={{ minWidth: '220px' }}
                     >
-                      {(item.children as { label: string; to: string; icon: React.ElementType }[]).map(
-                        ({ label, to, icon: Icon }) => (
+                      {SOLUTION_ITEMS.map(({ label, to, icon: Icon }) => (
+                        <Link
+                          key={to}
+                          to={to}
+                          className="group flex items-center gap-3 px-3 py-2.5 mx-1 rounded-lg text-sm text-gray-700 hover:bg-orange-50 hover:text-primary transition-colors"
+                        >
+                          <div className="w-7 h-7 rounded-lg bg-gray-100 text-gray-500 flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-white transition-colors">
+                            <Icon className="w-3.5 h-3.5" />
+                          </div>
+                          {label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* ── Resources dropdown (rich) ── */}
+                  {item.label === 'Resources' && (
+                    <div
+                      className={`absolute top-full left-0 mt-2 bg-white border border-gray-100 rounded-2xl shadow-2xl shadow-black/8 p-3 transition-all duration-150 ${
+                        openDropdown === 'Resources'
+                          ? 'opacity-100 visible translate-y-0'
+                          : 'opacity-0 invisible -translate-y-2'
+                      }`}
+                      style={{ width: '340px' }}
+                    >
+                      <div className="space-y-1">
+                        {RESOURCE_ITEMS.map(({ label, to, icon: Icon, desc }) => (
                           <Link
                             key={to}
                             to={to}
-                            className="group flex items-center gap-3 px-3 py-2.5 mx-1 rounded-lg text-sm text-gray-700 hover:bg-orange-50 hover:text-primary transition-colors"
+                            className="group flex items-start gap-3 p-2.5 rounded-xl hover:bg-orange-50 transition-colors duration-150"
                           >
-                            <div className="w-7 h-7 rounded-lg bg-gray-100 text-gray-500 flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-white transition-colors">
-                              <Icon className="w-3.5 h-3.5" />
+                            <div className="w-8 h-8 rounded-lg bg-orange-100 text-primary flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-white transition-colors">
+                              <Icon className="w-4 h-4" />
                             </div>
-                            {label}
+                            <div>
+                              <div className="text-sm font-semibold text-charcoal group-hover:text-primary transition-colors leading-tight">
+                                {label}
+                              </div>
+                              <div className="text-xs text-gray-400 mt-0.5 leading-snug">{desc}</div>
+                            </div>
                           </Link>
-                        )
-                      )}
+                        ))}
+                      </div>
                     </div>
                   )}
                 </div>

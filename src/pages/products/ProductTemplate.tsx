@@ -94,10 +94,10 @@ export default function ProductTemplate({ config }: { config: ProductPageConfig 
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
 
   return (
-    <main className="bg-warm pt-24">
+    <main className="bg-warm">
 
       {/* ── HERO ──────────────────────────────────── */}
-      <section className="py-16 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section className="min-h-screen flex items-center pt-24 pb-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
           <div className="lg:w-1/2 text-center lg:text-left">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-100 text-primary text-xs font-semibold mb-6">

@@ -18,9 +18,9 @@ export default function PlaceholderPage({ title, subtitle, tag = 'Coming Soon' }
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   return (
-    <main className="bg-warm pt-24">
+    <main className="bg-warm">
       {/* Hero */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 text-center max-w-4xl mx-auto">
+      <section className="min-h-screen flex flex-col justify-center items-center pt-24 pb-12 px-4 sm:px-6 lg:px-8 text-center max-w-4xl mx-auto">
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-100 text-primary text-xs font-semibold mb-6">
           {tag}
         </div>

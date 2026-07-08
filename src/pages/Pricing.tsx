@@ -98,9 +98,9 @@ export default function Pricing() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   return (
-    <main className="bg-warm pt-24">
+    <main className="bg-warm">
       {/* Hero */}
-      <section className="py-16 lg:py-24 px-4 sm:px-6 lg:px-8 text-center max-w-4xl mx-auto">
+      <section className="min-h-screen flex flex-col justify-center items-center pt-24 pb-12 px-4 sm:px-6 lg:px-8 text-center max-w-4xl mx-auto">
         <h1 className="text-4xl sm:text-5xl font-bold text-charcoal mb-4 font-sora">Simple, transparent pricing</h1>
         <p className="text-lg text-gray-500 mb-10">No hidden fees. No per-transaction charges. Flat monthly rate — cancel anytime.</p>
 

@@ -61,15 +61,13 @@ export default function Contact() {
   );
 
   return (
-    <main className="bg-warm pt-24">
-      {/* Hero */}
-      <section className="py-12 lg:py-20 px-4 sm:px-6 lg:px-8 text-center max-w-3xl mx-auto">
-        <h1 className="text-4xl sm:text-5xl font-bold text-charcoal mb-4 font-sora">Let's talk about your restaurant</h1>
-        <p className="text-lg text-gray-500">Book a free personalised demo, ask a sales question, or get help from our team.</p>
-      </section>
-
-      {/* Main grid */}
-      <section className="pb-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+    <main className="bg-warm">
+      {/* Hero & Form Grid unified in min-h-screen */}
+      <section className="min-h-screen flex flex-col justify-center pt-24 pb-12 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+        <div className="text-center max-w-3xl mx-auto mb-10">
+          <h1 className="text-4xl sm:text-5xl font-bold text-charcoal mb-4 font-sora">Let's talk about your restaurant</h1>
+          <p className="text-lg text-gray-500">Book a free personalised demo, ask a sales question, or get help from our team.</p>
+        </div>
         <div className="grid lg:grid-cols-2 gap-10 items-start">
 
           {/* Form */}

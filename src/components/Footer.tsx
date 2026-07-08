@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Logo from './Logo';
 import { Twitter, Linkedin, Instagram, Facebook, Youtube } from 'lucide-react';
 
 const FOOTER_LINKS = {
@@ -48,11 +49,8 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-10 mb-14">
           {/* Brand column */}
           <div className="col-span-2 md:col-span-3 lg:col-span-1">
-            <Link to="/" className="flex items-center gap-2 mb-5">
-              <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-                <span className="text-white font-bold text-sm font-sora">eS</span>
-              </div>
-              <span className="font-bold text-white text-lg font-sora">e-Smart Restaurant</span>
+            <Link to="/" className="inline-block mb-5">
+              <Logo className="h-10 sm:h-12" lightText={true} />
             </Link>
             <p className="text-sm text-gray-400 leading-relaxed mb-5">
               Cloud-based billing & POS software for restaurants, cafés, cloud kitchens, and multi-outlet chains across India.

@@ -69,7 +69,7 @@ export default function SolutionTemplate({ config }: { config: SolutionPageConfi
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
 
   return (
-    <main className="bg-warm pt-24">
+    <main className="bg-warm">
 
       {/* ── HERO ──────────────────────────────────── */}
       <section className="min-h-screen flex items-center pt-24 pb-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">

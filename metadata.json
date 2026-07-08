@@ -1,0 +1,6 @@
+{
+  "name": "e-Smart Restaurant",
+  "description": "A premium, end-to-end digital ecosystem to digitize restaurant operations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

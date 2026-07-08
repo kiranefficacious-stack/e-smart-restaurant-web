@@ -18,6 +18,8 @@ import CRMLoyalty from './pages/products/CRMLoyalty';
 import {
   FineDine, QSR, Cafe, CloudKitchens, Bars, Bakery, FoodCourts, MultiOutlet
 } from './pages/solutions/SolutionPages';
+// Resource pages
+import { Blog, Guides, HelpCenter } from './pages/resources/ResourcePages';
 
 /* Scroll to top on every route change */
 function ScrollToTop() {
@@ -39,10 +41,6 @@ function Layout({ children }: { children: React.ReactNode }) {
 
 /* ─── Placeholder route configs ─────────────────────── */
 const PLACEHOLDER_ROUTES = [
-  // Resources
-  { path: '/resources/blog',            title: 'Blog & Insights',                subtitle: 'Tips, guides, and case studies to help you run a more profitable restaurant.' },
-  { path: '/resources/guides',          title: 'Guides & Templates',             subtitle: 'Free downloadable resources — daily MIS templates, inventory sheets, and buyer guides.' },
-  { path: '/resources/help',            title: 'Help Center & FAQ',              subtitle: 'Step-by-step guides, video tutorials, and answers to the most common questions.' },
   // Legal
   { path: '/privacy',                   title: 'Privacy Policy',                 subtitle: 'How we collect, use, and protect your data.' },
   { path: '/terms',                     title: 'Terms of Service',               subtitle: 'The terms and conditions governing your use of e-Smart Restaurant.' },
@@ -104,6 +102,11 @@ export default function App() {
         <Route path="/solutions/bakeries" element={<Layout><Bakery /></Layout>} />
         <Route path="/solutions/food-courts" element={<Layout><FoodCourts /></Layout>} />
         <Route path="/solutions/multi-outlet" element={<Layout><MultiOutlet /></Layout>} />
+
+        {/* ── Resource Pages (fully built) ── */}
+        <Route path="/resources/blog" element={<Layout><Blog /></Layout>} />
+        <Route path="/resources/guides" element={<Layout><Guides /></Layout>} />
+        <Route path="/resources/help" element={<Layout><HelpCenter /></Layout>} />
 
         {/* All other placeholder routes */}
         {PLACEHOLDER_ROUTES.map(({ path, title, subtitle }) => (

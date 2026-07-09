@@ -181,6 +181,34 @@ const CROSS_SELL = [
   { icon: Heart, title: 'CRM & Loyalty', desc: 'Auto-reward repeat customers, send SMS birthday offers, and reduce churn.', to: '/product/crm' },
 ];
 
+/* ─── Why Us ─────────────────────────────────────────── */
+const WHY_US = [
+  {
+    icon: Zap,
+    title: 'Engineered for peak-hour speed',
+    desc: 'A bill in 30 seconds, a kitchen ticket (KOT) in under 5. Zero lag even when your queue is out the door during weekend rush hours.',
+    metric: '3.2s average checkout'
+  },
+  {
+    icon: Heart,
+    title: '100% predictable flat pricing',
+    desc: 'No commission on your orders, no device-license limits, and no surprise platform fees. We charge a flat yearly subscription so you keep all your margins.',
+    metric: 'Save ₹15,000+/mo in fees'
+  },
+  {
+    icon: Layers,
+    title: 'Works with your existing devices',
+    desc: 'No proprietary hardware lock-ins. Use e-Smart POS on your existing Android tablets, iPads, Windows PCs, and standard KOT printers.',
+    metric: 'Zero hardware replacement'
+  },
+  {
+    icon: Headphones,
+    title: 'Support that understands hospitality',
+    desc: 'Our support engineers have hands-on restaurant experience. When you call us during service, you speak directly to someone who knows how to fix printer routing instantly.',
+    metric: '98.7% first-call resolution'
+  }
+];
+
 /* ─── FAQ ────────────────────────────────────────────── */
 const FAQS = [
   { q: 'Why does my restaurant need dedicated billing software?', a: 'Manual billing leads to errors, revenue leakage, and slow table turnovers. Dedicated POS software like e-Smart Restaurant automates GST calculations, prevents fraudulent voids, routes kitchen orders instantly, and gives you real-time P&L visibility — all of which directly increase profitability.' },
@@ -225,42 +253,59 @@ export default function Home() {
     <main className="bg-warm">
 
       {/* ── 1. HERO ─────────────────────────────────── */}
-      <section className="min-h-screen flex items-center pt-24 pb-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
-          <div className="lg:w-1/2 text-center lg:text-left">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-100 text-primary text-xs font-semibold mb-6">
-              <Zap className="w-3.5 h-3.5" />
-              Trusted by 10,000+ restaurants across India {/* SAMPLE — replace with real stat */}
+      <section className="relative min-h-screen flex items-center pt-24 pb-12 overflow-hidden bg-warm border-b border-gray-100">
+        {/* Decorative Grid Pattern & Glows */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          {/* Subtle Dotted Pattern */}
+          <div 
+            className="absolute inset-0 opacity-[0.06]" 
+            style={{
+              backgroundImage: 'radial-gradient(#FF6B35 1.5px, transparent 1.5px)',
+              backgroundSize: '24px 24px'
+            }}
+          />
+          {/* Soft Gradient Glows */}
+          <div className="absolute -top-[20%] -left-[10%] w-[50%] h-[60%] rounded-full bg-primary/8 blur-[120px]" />
+          <div className="absolute top-[30%] -right-[10%] w-[45%] h-[55%] rounded-full bg-secondary/8 blur-[100px]" />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
+          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+            <div className="lg:w-1/2 text-center lg:text-left">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-100 text-primary text-xs font-semibold mb-6">
+                <Zap className="w-3.5 h-3.5" />
+                Trusted by 10,000+ restaurants across India {/* SAMPLE — replace with real stat */}
+              </div>
+              <h1 className="text-4xl sm:text-5xl lg:text-[3.25rem] font-bold text-charcoal leading-[1.12] mb-6 font-sora">
+                Bill faster than your{' '}
+                <span className="text-gradient">busiest rush hour</span>
+              </h1>
+              <p className="text-lg text-gray-500 mb-8 leading-relaxed max-w-lg mx-auto lg:mx-0">
+                Simplify billing, kitchen tickets, and table management in one screen. Designed for Indian restaurants — supports GST, and goes live in under a day.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-primary text-white font-bold text-base rounded-xl hover:bg-primary-dark transition-all shadow-lg shadow-orange-200"
+                >
+                  Get a Free Demo <ArrowRight className="w-4 h-4" />
+                </Link>
+                <a
+                  href="#features"
+                  className="inline-flex items-center justify-center gap-2 px-7 py-3.5 text-charcoal font-medium text-base rounded-xl border border-gray-200 hover:border-primary hover:text-primary transition-all bg-white"
+                >
+                  See how it works
+                </a>
+              </div>
+              <div className="flex items-center gap-6 mt-8 justify-center lg:justify-start text-sm text-gray-400">
+                <span className="flex items-center gap-1"><CheckCircle className="w-4 h-4 text-secondary" /> No commitment</span>
+                <span className="flex items-center gap-1"><CheckCircle className="w-4 h-4 text-secondary" /> Free onboarding</span>
+                <span className="flex items-center gap-1"><CheckCircle className="w-4 h-4 text-secondary" /> Live in &lt;1 day</span>
+              </div>
             </div>
-            <h1 className="text-4xl sm:text-5xl lg:text-[3.25rem] font-bold text-charcoal leading-[1.12] mb-6 font-sora">
-              Bill faster than your{' '}
-              <span className="text-gradient">busiest rush hour</span>
-            </h1>
-            <p className="text-lg text-gray-500 mb-8 leading-relaxed max-w-lg mx-auto lg:mx-0">
-              Simplify billing, kitchen tickets, and table management in one screen. Designed for Indian restaurants — supports GST, and goes live in under a day.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Link
-                to="/contact"
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-primary text-white font-bold text-base rounded-xl hover:bg-primary-dark transition-all shadow-lg shadow-orange-200"
-              >
-                Get a Free Demo <ArrowRight className="w-4 h-4" />
-              </Link>
-              <a
-                href="#features"
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 text-charcoal font-medium text-base rounded-xl border border-gray-200 hover:border-primary hover:text-primary transition-all bg-white"
-              >
-                See how it works
-              </a>
+            <div className="lg:w-1/2 w-full">
+              <POSMockup />
             </div>
-            <div className="flex items-center gap-6 mt-8 justify-center lg:justify-start text-sm text-gray-400">
-              <span className="flex items-center gap-1"><CheckCircle className="w-4 h-4 text-secondary" /> No commitment</span>
-              <span className="flex items-center gap-1"><CheckCircle className="w-4 h-4 text-secondary" /> Free onboarding</span>
-              <span className="flex items-center gap-1"><CheckCircle className="w-4 h-4 text-secondary" /> Live in &lt;1 day</span>
-            </div>
-          </div>
-          <div className="lg:w-1/2 w-full">
-            <POSMockup />
           </div>
         </div>
       </section>
@@ -331,6 +376,57 @@ export default function Home() {
               </Link>
             </FadeIn>
           ))}
+        </div>
+      </section>
+
+      {/* ── 5b. WHY CHOOSE US ────────────────────────── */}
+      <section className="py-20 lg:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-gray-100">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          {/* Left Column - Sticky Header */}
+          <div className="lg:col-span-5 lg:sticky lg:top-28 space-y-6">
+            <span className="text-secondary text-xs font-bold tracking-wider uppercase bg-secondary/10 px-3.5 py-1.5 rounded-full inline-flex items-center gap-1.5">
+              <TrendingUp className="w-3.5 h-3.5" />
+              The e-Smart Advantage
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-charcoal font-sora leading-tight">
+              Built for speed, styled for ease
+            </h2>
+            <p className="text-gray-500 text-lg leading-relaxed">
+              Standard POS systems are built for accountants to reconcile bills. e-Smart is built for cashiers to bill faster, stewards to take orders instantly, and managers to coordinate multiple outlets without the chaos.
+            </p>
+            <div className="pt-6 border-t border-gray-100 flex gap-8">
+              <div>
+                <div className="text-2xl font-bold text-primary font-sora">99.99%</div>
+                <div className="text-xs text-gray-400 uppercase font-semibold mt-1">Uptime SLA</div>
+              </div>
+              <div>
+                <div className="text-2xl font-bold text-primary font-sora">&lt; 3.5s</div>
+                <div className="text-xs text-gray-400 uppercase font-semibold mt-1">Steward sync time</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column - Value Cards */}
+          <div className="lg:col-span-7 space-y-6">
+            {WHY_US.map(({ icon: Icon, title, desc, metric }, i) => (
+              <FadeIn key={title} delay={i * 80}>
+                <div className="group bg-white rounded-2xl p-6 sm:p-7 border border-gray-100/70 hover:border-primary/20 hover:shadow-xl hover:shadow-orange-50 transition-all duration-300 flex gap-5 items-start">
+                  <div className="w-12 h-12 rounded-xl bg-orange-50 text-primary flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                    <Icon className="w-5 h-5" />
+                  </div>
+                  <div className="flex-1 space-y-2">
+                    <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1.5">
+                      <h3 className="font-bold text-charcoal font-sora text-base">{title}</h3>
+                      <span className="text-[11px] font-bold text-secondary bg-secondary/10 px-2.5 py-0.5 rounded-full tracking-wide shrink-0">
+                        {metric}
+                      </span>
+                    </div>
+                    <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
+                  </div>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
         </div>
       </section>
 

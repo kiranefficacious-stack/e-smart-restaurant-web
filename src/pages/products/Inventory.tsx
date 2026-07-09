@@ -7,40 +7,14 @@ import ProductTemplate, { ScreenFrame, type ProductPageConfig } from './ProductT
 
 /* ── Hero Illustration: Inventory Dashboard ──────────── */
 function InventoryIllustration() {
-  const items = [
-    { name: 'Paneer', unit: 'kg', stock: 12, max: 20, color: '#FF6B35', status: 'OK' },
-    { name: 'Tomatoes', unit: 'kg', stock: 3, max: 15, color: '#EF4444', status: 'LOW' },
-    { name: 'Chicken', unit: 'kg', stock: 8, max: 20, color: '#FF6B35', status: 'OK' },
-    { name: 'Basmati Rice', unit: 'kg', stock: 1, max: 10, color: '#EF4444', status: 'LOW' },
-    { name: 'Cooking Oil', unit: 'L', stock: 15, max: 20, color: '#0F9D8C', status: 'OK' },
-    { name: 'Onions', unit: 'kg', stock: 18, max: 20, color: '#0F9D8C', status: 'FULL' },
-  ];
-
   return (
-    <ScreenFrame>
-      {/* Header */}
-      <rect x="22" y="22" width="436" height="32" rx="8" fill="#1e1e35" />
-      <text x="36" y="41" fill="#FF6B35" fontSize="10" fontWeight="bold" fontFamily="monospace">Inventory Manager</text>
-      <rect x="390" y="29" width="58" height="18" rx="5" fill="#0F9D8C" />
-      <text x="419" y="41" fill="white" fontSize="8" fontFamily="monospace" textAnchor="middle">+ Add Stock</text>
-
-      {/* Stock level bars */}
-      <text x="36" y="68" fill="#aaaacc" fontSize="8" fontFamily="monospace">STOCK LEVELS — REAL TIME</text>
-      {items.map(({ name, unit, stock, max, color, status }, i) => (
-        <g key={name}>
-          <text x="36" y={84 + i * 32} fill="#ccccee" fontSize="8.5" fontFamily="monospace">{name}</text>
-          <text x="120" y={84 + i * 32} fill="#555577" fontSize="7" fontFamily="monospace">({unit})</text>
-          <rect x="36" y={88 + i * 32} width="300" height="10" rx="5" fill="#1a1a30" />
-          <rect x="36" y={88 + i * 32} width={Math.round((stock / max) * 300)} height="10" rx="5" fill={color} opacity="0.85" />
-          <text x="345" y={97 + i * 32} fill={color} fontSize="8" fontWeight="bold" fontFamily="monospace">{stock}/{max} {unit}</text>
-          <text x="420" y={97 + i * 32} fill={status === 'LOW' ? '#EF4444' : status === 'FULL' ? '#0F9D8C' : '#aaaacc'} fontSize="7" fontFamily="monospace" textAnchor="end">{status}</text>
-        </g>
-      ))}
-
-      {/* Alert banner */}
-      <rect x="36" y="278" width="400" height="14" rx="4" fill="#EF444418" stroke="#EF4444" strokeWidth="0.8" />
-      <text x="52" y="288" fill="#EF4444" fontSize="7.5" fontFamily="monospace">⚠ Low stock alert: Tomatoes (3kg), Basmati Rice (1kg) — reorder now</text>
-    </ScreenFrame>
+    <div className="relative w-full max-w-xl mx-auto flex justify-center">
+      <img
+        src="/inventory_mockup.png"
+        alt="e-Smart Inventory Management"
+        className="w-full h-auto object-contain drop-shadow-2xl lg:scale-110 transform transition-transform duration-300"
+      />
+    </div>
   );
 }
 

@@ -118,10 +118,10 @@ export default function ProductTemplate({ config }: { config: ProductPageConfig 
                 Get a Free Demo <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
-                to="/pricing"
+                to="/contact"
                 className="inline-flex items-center justify-center gap-2 px-7 py-3.5 text-charcoal font-medium rounded-xl border border-gray-200 hover:border-primary hover:text-primary transition-all bg-white"
               >
-                View Pricing
+                Contact Sales
               </Link>
             </div>
             <div className="flex flex-wrap items-center gap-x-5 gap-y-2 mt-7 justify-center lg:justify-start">

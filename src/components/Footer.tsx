@@ -20,11 +20,6 @@ const FOOTER_LINKS = {
     { label: 'Bars & Breweries', to: '/solutions/bars' },
     { label: 'Multi-Outlet Chains', to: '/solutions/multi-outlet' },
   ],
-  Resources: [
-    { label: 'Blog', to: '/resources/blog' },
-    { label: 'Guides & Templates', to: '/resources/guides' },
-    { label: 'Help Center / FAQ', to: '/resources/help' },
-  ],
   Company: [
     { label: 'About Us', to: '/about' },
     { label: 'Careers', to: '/about#careers' },

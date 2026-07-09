@@ -164,12 +164,7 @@ const ADDONS = [
   { heading: 'Analytics', items: ['Revenue Dashboard', 'Item Profitability', 'Wastage Reports', 'Outlet Comparison'] },
 ];
 
-/* ─── Resources ──────────────────────────────────────── */
-const RESOURCES = [
-  { tag: 'Guide', title: 'The Complete Guide to Restaurant POS for 2025', snippet: 'Everything you need to know before choosing billing software for your restaurant.' },
-  { tag: 'Blog', title: 'How QSR Chains Cut Billing Time by 40% with Smart KOT Routing', snippet: 'Real-world case study on peak-hour efficiency improvements.' },
-  { tag: 'Template', title: 'Free Restaurant Daily MIS Report Template', snippet: 'Track revenue, covers, and waste in a single printable sheet.' },
-];
+
 
 /* ═══════════════════════════════════════════════════════ */
 export default function Home() {
@@ -493,38 +488,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 9. RESOURCES TEASER ─────────────────────── */}
-      <section id="resources" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <FadeIn className="flex items-center justify-between mb-10">
-          <div>
-            <h2 className="text-2xl sm:text-3xl font-bold text-charcoal font-sora">From the e-Smart blog</h2>
-            <p className="text-gray-500 mt-1">Tips, guides, and case studies to grow your restaurant.</p>
-          </div>
-          <Link to="/resources/blog" className="hidden sm:flex items-center gap-1 text-primary font-semibold text-sm hover:gap-2 transition-all">
-            All articles <ArrowRight className="w-4 h-4" />
-          </Link>
-        </FadeIn>
-        <div className="grid sm:grid-cols-3 gap-6">
-          {RESOURCES.map(({ tag, title, snippet }, i) => (
-            <FadeIn key={title} delay={i * 80}>
-              <Link to="/resources/blog" className="group block bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-xl hover:shadow-orange-50 transition-all duration-300 h-full">
-                {/* Placeholder image */}
-                <div className="h-44 bg-gradient-to-br from-orange-100 to-orange-50 flex items-center justify-center">
-                  <Coffee className="w-12 h-12 text-primary/30" />
-                </div>
-                <div className="p-6">
-                  <span className="inline-block px-2.5 py-1 bg-orange-100 text-primary text-xs font-semibold rounded-full mb-3">{tag}</span>
-                  <h3 className="font-bold text-charcoal mb-2 font-sora group-hover:text-primary transition-colors leading-snug">{title}</h3>
-                  <p className="text-gray-500 text-sm mb-4">{snippet}</p>
-                  <span className="text-primary text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all">
-                    Read more <ArrowRight className="w-3.5 h-3.5" />
-                  </span>
-                </div>
-              </Link>
-            </FadeIn>
-          ))}
-        </div>
-      </section>
+
 
       {/* ── 10. FAQ ACCORDION ───────────────────────── */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">

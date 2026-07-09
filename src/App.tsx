@@ -3,7 +3,6 @@ import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
-import Pricing from './pages/Pricing';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import PlaceholderPage from './pages/PlaceholderPage';
@@ -20,8 +19,7 @@ import CRMLoyalty from './pages/products/CRMLoyalty';
 import {
   FineDine, QSR, Cafe, CloudKitchens, Bars, Bakery, FoodCourts, MultiOutlet
 } from './pages/solutions/SolutionPages';
-// Resource pages
-import { Blog, Guides, HelpCenter } from './pages/resources/ResourcePages';
+
 
 /* Scroll to top on every route change */
 function ScrollToTop() {
@@ -60,14 +58,7 @@ export default function App() {
             </Layout>
           }
         />
-        <Route
-          path="/pricing"
-          element={
-            <Layout>
-              <Pricing />
-            </Layout>
-          }
-        />
+
         <Route
           path="/about"
           element={
@@ -103,10 +94,7 @@ export default function App() {
         <Route path="/solutions/food-courts" element={<Layout><FoodCourts /></Layout>} />
         <Route path="/solutions/multi-outlet" element={<Layout><MultiOutlet /></Layout>} />
 
-        {/* ── Resource Pages (fully built) ── */}
-        <Route path="/resources/blog" element={<Layout><Blog /></Layout>} />
-        <Route path="/resources/guides" element={<Layout><Guides /></Layout>} />
-        <Route path="/resources/help" element={<Layout><HelpCenter /></Layout>} />
+
 
         {/* ── Legal Pages (fully built) ── */}
         <Route path="/privacy" element={<Layout><PrivacyPolicy /></Layout>} />

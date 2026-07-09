@@ -173,8 +173,7 @@ export default function Contact() {
               </h3>
               <div className="space-y-1 text-sm text-gray-500">
                 <div className="flex justify-between"><span>Monday – Friday</span><span className="font-medium text-charcoal">9:00 AM – 8:00 PM</span></div>
-                <div className="flex justify-between"><span>Saturday</span><span className="font-medium text-charcoal">10:00 AM – 6:00 PM</span></div>
-                <div className="flex justify-between"><span>Sunday</span><span className="text-gray-400">Closed</span></div>
+                <div className="flex justify-between"><span>Saturday – Sunday</span><span className="text-gray-400">Closed</span></div>
               </div>
             </div>
 

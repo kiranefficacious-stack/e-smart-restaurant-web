@@ -8,6 +8,8 @@ import {
   MessageCircle, Headphones, PieChart
 } from 'lucide-react';
 import CTABand from '../components/CTABand';
+import TestimonialsCarousel from '../components/TestimonialsCarousel';
+
 
 /* ─── Animated Counter Hook ─────────────────────────── */
 function useCountUp(target: number, duration = 1800, suffix = '') {
@@ -163,7 +165,6 @@ const FEATURES = [
 
 /* ─── Compatibility ──────────────────────────────────── */
 const COMPAT = [
-  { icon: Wifi, label: 'Works offline' },
   { icon: Monitor, label: 'Any hardware' },
   { icon: Globe, label: 'Any OS' },
   { icon: Keyboard, label: 'Touch or keyboard' },
@@ -236,7 +237,7 @@ export default function Home() {
               <span className="text-gradient">busiest rush hour</span>
             </h1>
             <p className="text-lg text-gray-500 mb-8 leading-relaxed max-w-lg mx-auto lg:mx-0">
-              Simplify billing, kitchen tickets, and table management in one screen. Designed for Indian restaurants — works offline, supports GST, and goes live in under a day.
+              Simplify billing, kitchen tickets, and table management in one screen. Designed for Indian restaurants — supports GST, and goes live in under a day.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Link
@@ -334,32 +335,7 @@ export default function Home() {
       </section>
 
       {/* ── 6. SOCIAL PROOF ─────────────────────────── */}
-      {/* SAMPLE TESTIMONIAL — replace with a real verified customer quote before launch */}
-      <section className="bg-orange-50 py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto">
-          <FadeIn>
-            <div className="bg-white rounded-2xl p-8 sm:p-10 border border-orange-100 shadow-lg shadow-orange-100/40 relative">
-              <div className="absolute -top-4 left-8 text-primary text-6xl font-serif leading-none">"</div>
-              <div className="flex mb-3">
-                {[1,2,3,4,5].map(s => <Star key={s} className="w-5 h-5 text-amber-400 fill-amber-400" />)}
-              </div>
-              <p className="text-charcoal text-lg leading-relaxed mb-6 font-medium">
-                We used to struggle during weekend rushes — wrong orders, lost KOTs, billing errors. Since switching to e-Smart Restaurant our table turnover time has dropped by 20 minutes and billing mistakes are almost zero.
-              </p>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center text-primary font-bold font-sora">
-                  RS
-                </div>
-                <div>
-                  <div className="font-bold text-charcoal font-sora">Rohit Sharma</div>
-                  {/* SAMPLE — replace with real customer */}
-                  <div className="text-sm text-gray-500">Owner, The Spice Route — Pune</div>
-                </div>
-              </div>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
+      <TestimonialsCarousel />
 
       {/* ── 7. DEMO REQUEST BAND ────────────────────── */}
       <section id="demo" className="py-20 lg:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">

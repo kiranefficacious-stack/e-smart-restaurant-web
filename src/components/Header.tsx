@@ -68,6 +68,7 @@ const RESOURCE_ITEMS = [
 ];
 
 const NAV_ITEMS = [
+  { label: 'Home', to: '/' },
   { label: 'Product', children: PRODUCT_ITEMS, wide: true },
   { label: 'Solutions', children: SOLUTION_ITEMS },
   { label: 'Pricing', to: '/pricing' },
@@ -102,7 +103,7 @@ export default function Header() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-6">
 
           {/* Logo */}
-          <Link to="/" className="shrink-0 flex items-center">
+          <Link to="/" className="shrink-0 flex items-center -mt-6">
             <Logo className="h-10 sm:h-12" />
           </Link>
 

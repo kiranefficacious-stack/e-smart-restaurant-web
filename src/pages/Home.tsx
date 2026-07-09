@@ -114,7 +114,6 @@ const CROSS_SELL = [
   { icon: BarChart2, title: 'Reports & Analytics', desc: 'Daily MIS, item-wise sales, waiter performance, and trend reports in real-time.', to: '/product/reports' },
   { icon: Package, title: 'Inventory Management', desc: 'Track raw materials to the gram. Auto-deduct from recipes with every bill generated.', to: '/product/inventory' },
   { icon: UtensilsCrossed, title: 'Menu Management', desc: 'Update prices, add combos, and manage modifiers across all outlets instantly.', to: '/product/menu' },
-  { icon: Heart, title: 'CRM & Loyalty', desc: 'Auto-reward repeat customers, send SMS birthday offers, and reduce churn.', to: '/product/crm' },
 ];
 
 /* ─── Why Us ─────────────────────────────────────────── */

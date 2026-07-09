@@ -14,7 +14,6 @@ import Inventory from './pages/products/Inventory';
 import OnlineOrdering from './pages/products/OnlineOrdering';
 import Reports from './pages/products/Reports';
 import MenuManagement from './pages/products/MenuManagement';
-import CRMLoyalty from './pages/products/CRMLoyalty';
 // Solution pages
 import {
   FineDine, QSR, Cafe, CloudKitchens, Bars, Bakery, FoodCourts, MultiOutlet
@@ -82,7 +81,7 @@ export default function App() {
         <Route path="/product/online-ordering" element={<Layout><OnlineOrdering /></Layout>} />
         <Route path="/product/reports" element={<Layout><Reports /></Layout>} />
         <Route path="/product/menu" element={<Layout><MenuManagement /></Layout>} />
-        <Route path="/product/crm" element={<Layout><CRMLoyalty /></Layout>} />
+
 
         {/* ── Solution Pages (fully built) ── */}
         <Route path="/solutions/fine-dine" element={<Layout><FineDine /></Layout>} />

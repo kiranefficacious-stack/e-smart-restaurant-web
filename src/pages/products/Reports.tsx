@@ -36,28 +36,28 @@ function ReportsIllustration() {
       <text x="36" y="136" fill="#aaaacc" fontSize="8" fontFamily="monospace">REVENUE — THIS WEEK</text>
       {bars.map((h, i) => (
         <g key={i}>
-          <rect x={36 + i * 54} y={224 - h} width={40} height={h} rx={4} fill={i === 5 ? '#FF6B35' : '#1e3a5f'} opacity={i === 5 ? 1 : 0.7} />
-          <text x={56 + i * 54} y={234} fill={i === 5 ? '#FF6B35' : '#555577'} fontSize="7" fontFamily="monospace" textAnchor="middle">{days[i]}</text>
+          <rect x={36 + i * 32} y={224 - h} width={22} height={h} rx={4} fill={i === 5 ? '#FF6B35' : '#1e3a5f'} opacity={i === 5 ? 1 : 0.7} />
+          <text x={36 + i * 32 + 11} y={234} fill={i === 5 ? '#FF6B35' : '#555577'} fontSize="7" fontFamily="monospace" textAnchor="middle">{days[i]}</text>
         </g>
       ))}
 
       {/* Pie chart area */}
-      <circle cx="420" cy="185" r="50" fill="#0f0f2a" />
-      <path d="M420,185 L420,135 A50,50 0 0,1 464,210 Z" fill="#FF6B35" />
-      <path d="M420,185 L464,210 A50,50 0 0,1 398,234 Z" fill="#0F9D8C" />
-      <path d="M420,185 L398,234 A50,50 0 0,1 376,160 Z" fill="#A78BFA" />
-      <path d="M420,185 L376,160 A50,50 0 0,1 420,135 Z" fill="#F59E0B" />
-      <circle cx="420" cy="185" r="28" fill="#0a0a1a" />
-      <text x="420" y="181" fill="#aaaacc" fontSize="7" fontFamily="monospace" textAnchor="middle">Dish</text>
-      <text x="420" y="192" fill="white" fontSize="7" fontWeight="bold" fontFamily="monospace" textAnchor="middle">Mix</text>
+      <circle cx="380" cy="180" r="50" fill="#0f0f2a" />
+      <path d="M380,180 L380,130 A50,50 0 0,1 424,205 Z" fill="#FF6B35" />
+      <path d="M380,180 L424,205 A50,50 0 0,1 358,229 Z" fill="#0F9D8C" />
+      <path d="M380,180 L358,229 A50,50 0 0,1 336,155 Z" fill="#A78BFA" />
+      <path d="M380,180 L336,155 A50,50 0 0,1 380,130 Z" fill="#F59E0B" />
+      <circle cx="380" cy="180" r="28" fill="#0a0a1a" />
+      <text x="380" y="176" fill="#aaaacc" fontSize="7" fontFamily="monospace" textAnchor="middle">Dish</text>
+      <text x="380" y="187" fill="white" fontSize="7" fontWeight="bold" fontFamily="monospace" textAnchor="middle">Mix</text>
 
       {/* Legend */}
       {[
         ['Mains', '#FF6B35'], ['Drinks', '#0F9D8C'], ['Starters', '#A78BFA'], ['Desserts', '#F59E0B'],
       ].map(([label, color], i) => (
         <g key={label}>
-          <rect x={36 + i * 98} y={250} width={8} height={8} rx={2} fill={color} />
-          <text x={50 + i * 98} y={258} fill="#8888aa" fontSize="7" fontFamily="monospace">{label}</text>
+          <rect x={36 + i * 85} y={250} width={8} height={8} rx={2} fill={color} />
+          <text x={50 + i * 85} y={258} fill="#8888aa" fontSize="7" fontFamily="monospace">{label}</text>
         </g>
       ))}
     </ScreenFrame>

@@ -10,7 +10,6 @@ const FOOTER_LINKS = {
     { label: 'Online Ordering', to: '/product/online-ordering' },
     { label: 'Reports & Analytics', to: '/product/reports' },
     { label: 'Menu Management', to: '/product/menu' },
-    { label: 'CRM & Loyalty', to: '/product/crm' },
   ],
   Solutions: [
     { label: 'Fine Dine', to: '/solutions/fine-dine' },

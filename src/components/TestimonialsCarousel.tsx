@@ -126,14 +126,18 @@ export default function TestimonialsCarousel() {
     }
   };
 
+  const isMounted = useRef(false);
+
   const scrollToCard = (index: number) => {
     if (!scrollRef.current) return;
     const children = Array.from(scrollRef.current.children) as HTMLElement[];
-    if (children[index]) {
-      children[index].scrollIntoView({
-        behavior: 'smooth',
-        block: 'nearest',
-        inline: 'start'
+    const targetChild = children[index];
+    if (targetChild) {
+      const scroller = scrollRef.current;
+      const targetLeft = targetChild.offsetLeft - scroller.offsetLeft;
+      scroller.scrollTo({
+        left: targetLeft,
+        behavior: 'smooth'
       });
       setActiveIndex(index);
     }
@@ -149,8 +153,12 @@ export default function TestimonialsCarousel() {
     scrollToCard(prevIdx);
   };
 
-  // Reset index to 0 when category changes
+  // Reset index to 0 when category changes (skipping the initial render)
   useEffect(() => {
+    if (!isMounted.current) {
+      isMounted.current = true;
+      return;
+    }
     scrollToCard(0);
   }, [activeFilter]);
 

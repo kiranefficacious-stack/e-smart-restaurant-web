@@ -30,6 +30,8 @@ const FOOTER_LINKS = {
     { label: 'Careers', to: '/about#careers' },
     { label: 'Partner Program', to: '/about#partners' },
     { label: 'Contact Us', to: '/contact' },
+    { label: 'Privacy Policy', to: '/privacy' },
+    { label: 'Terms of Service', to: '/terms' },
   ],
 };
 

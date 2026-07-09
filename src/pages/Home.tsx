@@ -79,76 +79,12 @@ function StatCard({ target, suffix, label }: { target: number; suffix: string; l
 /* ─── POS Screen SVG Mockup ──────────────────────────── */
 function POSMockup() {
   return (
-    <div className="relative w-full max-w-lg mx-auto">
-      {/* Glow */}
-      <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full scale-75" />
-      {/* Screen */}
-      <svg viewBox="0 0 480 340" fill="none" xmlns="http://www.w3.org/2000/svg" className="relative w-full drop-shadow-2xl">
-        {/* Monitor base */}
-        <rect x="10" y="10" width="460" height="310" rx="16" fill="#1A1A2E" />
-        <rect x="10" y="10" width="460" height="310" rx="16" stroke="#FF6B35" strokeWidth="2" strokeOpacity="0.4" />
-        {/* Screen content area */}
-        <rect x="24" y="24" width="432" height="282" rx="10" fill="#0F0F1E" />
-
-        {/* Top bar */}
-        <rect x="24" y="24" width="432" height="38" rx="10" fill="#1e1e35" />
-        <text x="40" y="47" fill="#FF6B35" fontSize="11" fontWeight="bold" fontFamily="monospace">e-Smart POS</text>
-        <rect x="360" y="33" width="60" height="20" rx="6" fill="#FF6B35" />
-        <text x="374" y="47" fill="white" fontSize="10" fontFamily="monospace">Bill #42</text>
-
-        {/* Sidebar */}
-        <rect x="24" y="62" width="120" height="244" fill="#141428" />
-        {/* Table cards */}
-        {[0,1,2,3,4,5].map((i) => (
-          <g key={i}>
-            <rect x="32" y={72 + i * 37} width="100" height="28" rx="6" fill={i === 1 ? '#FF6B35' : i === 3 ? '#0F9D8C' : '#222240'} />
-            <text x="48" y={91 + i * 37} fill={i === 1 || i === 3 ? 'white' : '#8888aa'} fontSize="9" fontFamily="monospace">
-              Table {i + 1} {i === 1 ? '●' : i === 3 ? '○' : ''}
-            </text>
-          </g>
-        ))}
-
-        {/* Main content */}
-        <rect x="156" y="62" width="300" height="244" fill="#0a0a1a" />
-
-        {/* Order items */}
-        <text x="168" y="84" fill="#aaaacc" fontSize="9" fontFamily="monospace">ORDER ITEMS — TABLE 2</text>
-        {[
-          { name: 'Paneer Butter Masala', qty: 2, price: '₹560' },
-          { name: 'Garlic Naan ×4', qty: 4, price: '₹180' },
-          { name: 'Mango Lassi', qty: 3, price: '₹240' },
-          { name: 'Veg Biryani', qty: 1, price: '₹320' },
-        ].map((item, i) => (
-          <g key={i}>
-            <rect x="160" y={92 + i * 32} width="286" height="26" rx="5" fill={i % 2 === 0 ? '#0F0F2A' : '#0a0a1a'} />
-            <text x="170" y={109 + i * 32} fill="#ccccee" fontSize="9" fontFamily="monospace">{item.name}</text>
-            <text x="420" y={109 + i * 32} fill="#FF6B35" fontSize="9" fontFamily="monospace" textAnchor="end">{item.price}</text>
-          </g>
-        ))}
-
-        {/* Divider */}
-        <rect x="160" y="224" width="286" height="1" fill="#2a2a4a" />
-
-        {/* Totals */}
-        <text x="170" y="240" fill="#888899" fontSize="9" fontFamily="monospace">Subtotal</text>
-        <text x="440" y="240" fill="#ccccee" fontSize="9" fontFamily="monospace" textAnchor="end">₹1,300</text>
-        <text x="170" y="254" fill="#888899" fontSize="9" fontFamily="monospace">GST (5%)</text>
-        <text x="440" y="254" fill="#ccccee" fontSize="9" fontFamily="monospace" textAnchor="end">₹65</text>
-        <text x="170" y="272" fill="white" fontSize="11" fontWeight="bold" fontFamily="monospace">TOTAL</text>
-        <text x="440" y="272" fill="#FF6B35" fontSize="11" fontWeight="bold" fontFamily="monospace" textAnchor="end">₹1,365</text>
-
-        {/* Action buttons */}
-        <rect x="160" y="280" width="90" height="22" rx="5" fill="#222240" />
-        <text x="205" y="294" fill="#8888aa" fontSize="9" fontFamily="monospace" textAnchor="middle">Print KOT</text>
-        <rect x="258" y="280" width="90" height="22" rx="5" fill="#0F9D8C" />
-        <text x="303" y="294" fill="white" fontSize="9" fontFamily="monospace" textAnchor="middle">Send Bill</text>
-        <rect x="356" y="280" width="90" height="22" rx="5" fill="#FF6B35" />
-        <text x="401" y="294" fill="white" fontSize="9" fontWeight="bold" fontFamily="monospace" textAnchor="middle">Settle ₹1365</text>
-
-        {/* KOT badge */}
-        <circle cx="440" cy="38" r="10" fill="#0F9D8C" />
-        <text x="440" y="42" fill="white" fontSize="8" fontFamily="monospace" textAnchor="middle">KOT</text>
-      </svg>
+    <div className="relative w-full max-w-3xl mx-auto lg:scale-110 transition-transform duration-300">
+      <img
+        src="/hero_pos.png"
+        className="relative w-full object-contain"
+        alt="e-Smart Restaurant POS Terminal"
+      />
     </div>
   );
 }
@@ -271,7 +207,7 @@ export default function Home() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
-            <div className="lg:w-1/2 text-center lg:text-left">
+            <div className="lg:w-[45%] text-center lg:text-left">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-100 text-primary text-xs font-semibold mb-6">
                 <Zap className="w-3.5 h-3.5" />
                 Trusted by 10,000+ restaurants across India {/* SAMPLE — replace with real stat */}
@@ -303,7 +239,7 @@ export default function Home() {
                 <span className="flex items-center gap-1"><CheckCircle className="w-4 h-4 text-secondary" /> Live in &lt;1 day</span>
               </div>
             </div>
-            <div className="lg:w-1/2 w-full">
+            <div className="lg:w-[55%] w-full">
               <POSMockup />
             </div>
           </div>

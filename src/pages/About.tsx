@@ -28,7 +28,7 @@ export default function About() {
   return (
     <main className="bg-warm">
       {/* Hero */}
-      <section className="min-h-screen flex flex-col justify-center items-center pt-24 pb-12 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center">
+      <section className="min-h-screen lg:h-screen lg:min-h-0 lg:py-0 flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center">
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-100 text-primary text-xs font-semibold mb-6">
           <Heart className="w-3.5 h-3.5" />
           Made in India, for India's restaurants

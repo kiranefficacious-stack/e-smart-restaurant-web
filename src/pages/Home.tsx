@@ -183,7 +183,7 @@ export default function Home() {
     <main className="bg-warm">
 
       {/* ── 1. HERO ─────────────────────────────────── */}
-      <section className="relative min-h-screen flex items-center pt-24 pb-12 overflow-hidden bg-warm border-b border-gray-100">
+      <section className="relative min-h-screen lg:h-screen lg:min-h-0 lg:py-0 flex items-center overflow-hidden bg-warm border-b border-gray-100">
         {/* Decorative Grid Pattern & Glows */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           {/* Subtle Dotted Pattern */}

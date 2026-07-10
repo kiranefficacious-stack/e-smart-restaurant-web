@@ -72,30 +72,41 @@ export default function SolutionTemplate({ config }: { config: SolutionPageConfi
     <main className="bg-warm">
 
       {/* ── HERO ──────────────────────────────────── */}
-      <section className="min-h-screen flex items-center pt-24 pb-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16 w-full">
-          <div className="lg:w-1/2 text-center lg:text-left">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-100 text-primary text-xs font-semibold mb-6 animate-pulse">
-              e-Smart · {config.badge}
+      <section className="relative min-h-screen lg:h-screen lg:min-h-0 lg:py-0 flex items-center overflow-hidden bg-warm">
+        {/* Background decoration elements */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          {/* Radial dot-matrix background */}
+          <div className="absolute inset-0 opacity-[0.25]" style={{ backgroundImage: 'radial-gradient(#FF6B35 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
+          {/* Colorful gradient blurs */}
+          <div className="absolute -top-40 -right-40 w-96 h-96 bg-primary/20 rounded-full blur-3xl" />
+          <div className="absolute top-1/2 -left-20 w-80 h-80 bg-secondary/15 rounded-full blur-3xl" />
+        </div>
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16 w-full">
+            <div className="lg:w-1/2 text-center lg:text-left">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-100 text-primary text-xs font-semibold mb-6 animate-pulse">
+                e-Smart · {config.badge}
+              </div>
+              <h1 className="text-4xl sm:text-5xl lg:text-[3.1rem] font-bold text-charcoal leading-[1.12] mb-6 font-sora">
+                {config.title}{' '}
+                <span className="text-gradient">{config.titleAccent}</span>
+              </h1>
+              <p className="text-lg text-gray-500 mb-8 leading-relaxed max-w-lg mx-auto lg:mx-0">
+                {config.subtitle}
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-primary text-white font-bold rounded-xl hover:bg-primary-dark transition-all shadow-lg shadow-orange-200"
+                >
+                  Book a Demo for My Outlet <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
             </div>
-            <h1 className="text-4xl sm:text-5xl lg:text-[3.1rem] font-bold text-charcoal leading-[1.12] mb-6 font-sora">
-              {config.title}{' '}
-              <span className="text-gradient">{config.titleAccent}</span>
-            </h1>
-            <p className="text-lg text-gray-500 mb-8 leading-relaxed max-w-lg mx-auto lg:mx-0">
-              {config.subtitle}
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Link
-                to="/contact"
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-primary text-white font-bold rounded-xl hover:bg-primary-dark transition-all shadow-lg shadow-orange-200"
-              >
-                Book a Demo for My Outlet <ArrowRight className="w-4 h-4" />
-              </Link>
+            <div className="lg:w-1/2 w-full">
+              {config.illustration}
             </div>
-          </div>
-          <div className="lg:w-1/2 w-full">
-            {config.illustration}
           </div>
         </div>
       </section>
